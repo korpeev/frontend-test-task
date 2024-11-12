@@ -1,0 +1,170 @@
+$classes: (
+  "blue": "--card-blue-bg",
+  "purple": "--card-purple-bg",
+  "green": "--card-green-bg",
+);
+
+$card-border-gradients: (
+  'blue': '--card-blue-border-gradient',
+  'purple': '--card-purple-border-gradient',
+  'green': '--card-green-border-gradient',
+);
+
+$hovered-classes: (
+  "blue": "--card-blue-bg-hovered",
+  "purple": "--card-purple-bg-hovered",
+  "green": "--card-green-bg-hovered",
+);
+
+$card-number-bgs: (
+  "blue": "--card-blue-number-bg",
+  "purple": "--card-purple-number-bg",
+  "green": "--card-green-number-bg",
+);
+
+
+.card {
+  position: relative;
+  padding: 3px;
+  height: 352px;
+
+  border-radius: $card-border-radius;
+  transition: padding .3s ease-in-out;
+
+  @each $class, $variable in $card-border-gradients {
+    &.#{$class} {
+      background: var(#{$variable});
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  @each $class, $variable in $classes {
+    &.#{$class} > .card__wrapper {
+      background: var(#{$variable});
+      &::before {
+        background: var(#{map-get($hovered-classes, $class)});
+      }
+    }
+  }
+}
+
+.card__arrow {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  right: -12%;
+}
+
+.card__wrapper {
+  width: 419px;
+  max-height: calc(352px - calc($card-paddings + $card-paddings));
+  position: relative;
+  padding: $card-paddings;
+  border-radius: calc($card-border-radius - 3px);
+  transition: border-radius .4s ease-in-out;
+
+  &::before {
+    height: 352px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, border-radius 0.3s ease;
+    border-radius: $card-border-radius;
+  }
+
+  &:hover {
+    border-radius: calc($card-border-radius - 6px);
+    &::before {
+      border-radius: calc($card-border-radius - 6px);
+      opacity: 1;
+    }
+  }
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card__number {
+  position: relative;
+  width: 48px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.32) 100%);;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    margin: 5px;
+  }
+
+  @each $class, $variable in $card-number-bgs {
+    &.#{$class}::before {
+      background: var(#{$variable});
+    }
+  }
+
+  //&.card__number__blue::before {
+  //  background: linear-gradient(180deg, #2920A5 0%, #6377E1 100%);
+  //}
+  //
+  //&.card__number__purple {
+  //  background: linear-gradient(180deg, #741595 0%, #E163E1 100%);
+  //}
+  //
+  //&.card__number__green {
+  //  background: linear-gradient(180deg, #014D1D 0%, #55CE00 100%);
+  //}
+}
+
+.card__number__content {
+  padding: 12px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.card__title {
+  position: relative;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: break-spaces;
+}
+
+.card__hero__wrapper {
+  display: flex;
+  justify-content: center;
+  transform: translateY(60px);
+  height: 290px;
+}
+
+.card__hero {
+  width: 100%;
+  height: 100%;
+}

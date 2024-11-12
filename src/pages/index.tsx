@@ -1,4 +1,27 @@
 import Head from "next/head";
+import {Card} from "~/components/Card";
+import {Card as CardModel} from "~/models";
+
+const cards:CardModel[]  = [
+  {
+    color: 'blue',
+    title: 'Получите\nпартнерскую ссылку',
+    hasArrow: true,
+    hero: 'hero-1.svg'
+  },
+  {
+    color: 'purple',
+    title: 'Расскажите\nо IIII.COM',
+    hasArrow: true,
+    hero: 'hero-2.svg'
+  },
+  {
+    color: 'green',
+    title: 'Получайте хороший процент\nот покупок по вашей ссылке!',
+    hasArrow: false,
+    hero: 'hero-3.svg'
+  }
+]
 
 export default function Home() {
   return (
@@ -9,8 +32,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        Rustem lox
+      <div className='container'>
+        <div className="border">
+          {cards.map((card, index) => (
+              <Card card={card} key={index} index={index} />
+          ))}
+        </div>
       </div>
     </>
   );

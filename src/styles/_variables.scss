@@ -1,0 +1,22 @@
+$container-wrapper-border-radius: 24px;
+$card-border-radius: 20px;
+$card-border-width: 4px;
+$card-border-width-hovered: 6px;
+$card-paddings: 20px;
+
+
+$card-blue-bg: linear-gradient(180deg, #6377E1 0%, #2920A5 100%);
+$card-purple-bg: linear-gradient(180deg, #E163E1 0%, #741595 100%);
+$card-green-bg: linear-gradient(180deg, #55CE00 0%, #014D1D 100%);
+
+$card-blue-bg-hovered: linear-gradient(180deg, #657EFF 0%, #2920A5 100%);
+$card-purple-bg-hovered: linear-gradient(180deg, #FC69FC 0%, #741595 100%);
+$card-green-bg-hovered: linear-gradient(180deg, #5DE101 0%, #014D1D 100%);
+
+$card-blue-border-gradient: linear-gradient(180deg, #95A3EB 0%, #475FDF 100%);
+$card-purple-border-gradient: linear-gradient(180deg, #EB95EB 0%, #B348DF 100%);
+$card-green-border-gradient: linear-gradient(180deg, #8CDE53 0%, #3B8308 100%);
+
+$card-blue-number-bg: linear-gradient(180deg, #2920A5 0%, #6377E1 100%);
+$card-purple-number-bg:  linear-gradient(180deg, #741595 0%, #E163E1 100%);
+$card-green-number-bg:  linear-gradient(180deg, #014D1D 0%, #55CE00 100%);

@@ -1,0 +1,35 @@
+:root {
+  --card-blue-border-gradient: #{$card-blue-border-gradient};
+  --card-purple-border-gradient: #{$card-purple-border-gradient};
+  --card-green-border-gradient: #{$card-green-border-gradient};
+
+  --card-blue-bg: #{$card-blue-bg};
+  --card-green-bg: #{$card-green-bg};
+  --card-purple-bg: #{$card-purple-bg};
+
+  --card-blue-bg-hovered: #{$card-blue-bg-hovered};
+  --card-purple-bg-hovered: #{$card-purple-bg-hovered};
+  --card-green-bg-hovered: #{$card-green-bg-hovered};
+
+  --card-blue-number-bg: #{$card-blue-number-bg};
+  --card-purple-number-bg: #{$card-purple-number-bg};
+  --card-green-number-bg: #{$card-green-number-bg};
+}
+
+
+.container {
+  box-shadow: 0 24px 48px 0 #172B97B8;
+  border-radius: $container-wrapper-border-radius;
+  border: 4px solid #6B7DDE3D;
+  width: max-content;
+}
+
+.border {
+  padding: 4px;
+  display: flex;
+  align-items: baseline;
+  background: linear-gradient(180deg, rgba(107, 125, 222, 0.12) -20%, #2921A5 100%);
+  border-radius: $card-border-radius;
+
+  gap: 8px;
+}
